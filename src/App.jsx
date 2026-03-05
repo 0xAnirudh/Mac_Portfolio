@@ -1,14 +1,15 @@
-// import React from 'react'
 import { useEffect, useRef, useState } from 'react';
 import { gsap } from 'gsap';
+
+// import { Navbar, SplitText, Welcome } from "#components";
 import Navbar from "#components/Navbar.jsx"
 import SplitText from "#components/SplitText.jsx"
+import Welcome from "#components/Welcome.jsx"
 
 const App = () => {
   const helloRef = useRef(null);
   const splitRef = useRef(null);
   const [overlayPresent, setOverlayPresent] = useState(true);
-  
 
   useEffect(() => {
     helloRef.current?.play();
@@ -23,7 +24,7 @@ const App = () => {
       if (helloRef.current?.el) targets.push(helloRef.current.el);
       if (splitRef.current?.el) targets.push(splitRef.current.el);
       if (targets.length) gsap.to(targets, { opacity: 0, duration: 1, ease: 'power2.out' });
-    }, 7000);
+    }, 6000);
 
     const hideTimer = setTimeout(() => setShowText(false), 8000);
     const overlayTimer = setTimeout(() => setOverlayPresent(false), 10000);
@@ -76,6 +77,7 @@ const App = () => {
       )}
       <main>
         <Navbar/>
+        <Welcome/>
       </main>
     </>
   )
