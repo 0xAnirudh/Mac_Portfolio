@@ -5,6 +5,7 @@ import { gsap } from 'gsap';
 import Navbar from "#components/Navbar.jsx"
 import SplitText from "#components/SplitText.jsx"
 import Welcome from "#components/Welcome.jsx"
+import Dock from "#components/Dock.jsx"
 
 const App = () => {
   const helloRef = useRef(null);
@@ -78,6 +79,7 @@ const App = () => {
       <main>
         <Navbar/>
         <Welcome/>
+        <Dock/>
       </main>
     </>
   )
