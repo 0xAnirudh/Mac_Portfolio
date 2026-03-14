@@ -1,11 +1,15 @@
 import { useEffect, useRef, useState } from 'react';
-import { gsap } from 'gsap';
+import { gsap } from 'gsap'
+import { Draggable } from "gsap/Draggable";
 
 // import { Navbar, SplitText, Welcome } from "#components";
 import Navbar from "#components/Navbar.jsx"
 import SplitText from "#components/SplitText.jsx"
 import Welcome from "#components/Welcome.jsx"
 import Dock from "#components/Dock.jsx"
+import Terminal from "#windows/Terminal.jsx";
+
+gsap.registerPlugin(Draggable);
 
 const App = () => {
   const helloRef = useRef(null);
@@ -80,6 +84,7 @@ const App = () => {
         <Navbar/>
         <Welcome/>
         <Dock/>
+        <Terminal/>
       </main>
     </>
   )
