@@ -11,6 +11,10 @@ import Terminal from "#windows/Terminal.jsx";
 
 gsap.registerPlugin(Draggable);
 
+const nextWallpaper = (parseInt(localStorage.getItem('wallpaperIndex') || '0') % 3) + 1;
+localStorage.setItem('wallpaperIndex', nextWallpaper);
+document.documentElement.style.setProperty('--wallpaper-url', `url("/images/wallpaper${nextWallpaper}.png")`);
+
 const App = () => {
   const helloRef = useRef(null);
   const splitRef = useRef(null);
