@@ -3,19 +3,23 @@ import utc from "dayjs/plugin/utc";
 import timezone from "dayjs/plugin/timezone";
 import { navIcons } from "#constants";
 import { navLinks } from "#constants/index.js";
+import useWindowStore from "#store/window.js";
 
 dayjs.extend(utc);
 dayjs.extend(timezone);
 
 const Navbar = () => {
+
+  const { openWindow } = useWindowStore();
+
   return ( 
     <nav>
       <div>
         <img src="images/logo.svg" alt="logo" />
         <p className="font-semibold">Anirudh's Portfolio</p>
         <ul>
-          {navLinks.map(({id, name}) => (
-            <li key = {id}>
+          {navLinks.map(({ id, name, type }) => (
+            <li key = {id} onClick={() => openWindow(type)}>
               <p>{name}</p>
             </li>
           ))}

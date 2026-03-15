@@ -8,12 +8,14 @@ import SplitText from "#components/SplitText.jsx"
 import Welcome from "#components/Welcome.jsx"
 import Dock from "#components/Dock.jsx"
 import Terminal from "#windows/Terminal.jsx";
+import Safari from "#windows/Safari.jsx";
+import Resume from "#windows/Resume.jsx";
 
 gsap.registerPlugin(Draggable);
 
-const nextWallpaper = (parseInt(localStorage.getItem('wallpaperIndex') || '0') % 3) + 1;
-localStorage.setItem('wallpaperIndex', nextWallpaper);
-document.documentElement.style.setProperty('--wallpaper-url', `url("/images/wallpaper${nextWallpaper}.png")`);
+// const nextWallpaper = (parseInt(localStorage.getItem('wallpaperIndex') || '0') % 3) + 1;
+// localStorage.setItem('wallpaperIndex', nextWallpaper);
+// document.documentElement.style.setProperty('--wallpaper-url', `url("/images/wallpaper${nextWallpaper}.png")`);
 
 const App = () => {
   const helloRef = useRef(null);
@@ -89,6 +91,8 @@ const App = () => {
         <Welcome/>
         <Dock/>
         <Terminal/>
+        <Safari/>
+        <Resume/>
       </main>
     </>
   )
