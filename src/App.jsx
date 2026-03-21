@@ -7,6 +7,7 @@ import Navbar from "#components/Navbar.jsx"
 import SplitText from "#components/SplitText.jsx"
 import Welcome from "#components/Welcome.jsx"
 import Dock from "#components/Dock.jsx"
+import Home from "#components/Home.jsx"
 import Terminal from "#windows/Terminal.jsx";
 import Safari from "#windows/Safari.jsx";
 import Resume from "#windows/Resume.jsx";
@@ -14,6 +15,7 @@ import Finder from "#windows/Finder.jsx";
 import Text from "#windows/Text.jsx";
 import Image from "#windows/Image.jsx";
 import Contact from '#windows/Contact.jsx';
+import Photos from '#windows/Photos.jsx';
 
 gsap.registerPlugin(Draggable);
 
@@ -101,6 +103,8 @@ const App = () => {
         <Text/>
         <Image/>
         <Contact/>
+        <Home/>
+        <Photos/>
       </main>
     </>
   )
